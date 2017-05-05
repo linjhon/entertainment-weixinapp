@@ -1,0 +1,49 @@
+/* pages/music/music.wxss */
+
+#musicbox {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  width: 0;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 0 20px #666;
+}
+
+.media-rank {
+  position: absolute;
+  left: 20px;
+  color: #fff;
+  bottom: 0px;
+  text-shadow: 0 0 5px #ccc;
+}
+
+.musiclrc {
+  position: absolute;
+  bottom: 21px;
+  right: 74px;
+  font-size: 13px;
+  color: #0dadee;
+  z-index: 11;
+}
+
+#musicplay {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: 31px;
+  bottom: 15px;
+  border-radius: 50%;
+  z-index: 11;
+  /*background-image: url(../../public/images/icons/musicplayer.png);*/
+  background-size: 35px 35px;
+}
+
+/*修改默认audio样式;*/
+
+.wx-audio-default {
+  width: 100%;
+}
+
+.wx-audio-right {
+}

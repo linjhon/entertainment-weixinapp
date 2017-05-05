@@ -1,0 +1,19 @@
+@import "dist/style/weui.wxss";
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+} 
+@font-face {
+  font-family: 'iconfont';  /* project id 293480 */
+  src: url('//at.alicdn.com/t/font_z82xanwp2i5m6lxr.eot');
+  src: url('//at.alicdn.com/t/font_z82xanwp2i5m6lxr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_z82xanwp2i5m6lxr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_z82xanwp2i5m6lxr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_z82xanwp2i5m6lxr.svg#iconfont') format('svg');
+}

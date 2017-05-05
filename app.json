@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/movie/movie",
+    "pages/music/music",
+    "pages/index/index",
+    "pages/video/video",
+    "pages/mine/mine"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#black",
+    "navigationBarTitleText": "娱乐之家",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#0dadee",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"public/images/icons/home_light.png",
+      "selectedIconPath":"public/images/icons/home_fill_light.png"
+    }, {
+      "pagePath": "pages/music/music",
+      "text": "音乐",
+      "iconPath":"public/images/icons/music_light.png",
+      "selectedIconPath":"public/images/icons/music_fill_light.png"
+    }, {
+      "pagePath": "pages/video/video",
+      "text": "视频",
+      "iconPath":"public/images/icons/video_light.png",
+      "selectedIconPath":"public/images/icons/video_fill_light.png"
+    }, {
+      "pagePath": "pages/movie/movie",
+      "text": "电影",
+      "iconPath":"public/images/icons/record.png",
+      "selectedIconPath":"public/images/icons/record_fill.png"
+    }, {
+      "pagePath": "pages/mine/mine",
+      "text": "我",
+      "iconPath":"public/images/icons/my_light.png",
+      "selectedIconPath":"public/images/icons/my_fill_light.png"
+    }]
+  }
+}
