@@ -1,0 +1,35 @@
+
+<!--pages/ticket/ticket.wxml-->
+<view class="weui-panel weui-panel-first weui-panel_access">
+  <scroll-view class="weui-panel__hd date">
+    <view class="date-box">
+        <text wx:for="{{cinema.Dates}}" class="{{currentDate.text==item.text?'active':''}}" wx:key="{{index}}">{{item.text}}</text>
+    </view>
+  </scroll-view>
+  <view class="weui-panel__bd">
+    <navigator wx:for="{{cinemasList}}" url="../ticket/ticket?cinemaid={{item.id}}&movieid={{movieId}}" wx:key="{{index}}" class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">{{item.nm}}
+        <text class="cinemas-price">{{item.sellPrice}}
+          <text class="cinemas-price-gray">元起</text>
+        </text>
+      </view>
+      <view class="weui-media-box__desc">{{item.addr}}</view>
+    </navigator>
+  </view>
+  <view class="weui-panel__ft">
+    <view class="weui-cell weui-cell_access weui-cell_link">
+      <view class="weui-cell__bd">查看更多</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
+</view>
+<view class="weui-footer" style="padding:10px 0">
+  <view class="weui-footer__links">
+    <navigator url="../index/index" open-type="switchTab" class="weui-footer__link">首页</navigator>
+    <navigator url="../music/music" open-type="switchTab" class="weui-footer__link">音乐</navigator>
+    <navigator url="../video/video" open-type="switchTab" class="weui-footer__link">视频</navigator>
+    <navigator url="../movie/movie" open-type="switchTab" class="weui-footer__link">电影</navigator>
+    <navigator url="../mine/mine" open-type="switchTab" class="weui-footer__link">我</navigator>
+  </view>
+  <view class="weui-footer__text">Copyright © 2016-2017 娱乐之家</view>
+</view>

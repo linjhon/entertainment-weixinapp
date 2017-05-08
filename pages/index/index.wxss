@@ -1,21 +1,28 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+page{
+    background-color: #f4f4f4;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.weui-panel-first{
+    margin-top:0;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.weui-media-box {
+  flex-flow: wrap;
+  padding:12px;
+}
+image{
+    background: #ccc;
 }
 
-.usermotto {
-  margin-top: 200px;
+.weui-cell__ft{
+    float:right;
 }
+
+.weui-media-box__hd {
+  width: 33.3%;
+  padding:5px;
+  margin: 0;
+  box-sizing: border-box;
+}
+

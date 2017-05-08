@@ -1,2 +1,26 @@
 <!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd">热门视频</view>
+  <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text" wx:for="{{videoList}}">
+        <view class="comment-content">
+        <text class="iconfont icon-video_fill_light play-btn"></text>
+        <image src="{{item.cover_pic}}" mode="aspectFill" class="comment-content"></image>
+        </view>
+        <view class="comment-content">{{item.caption}}</view>
+        <view class="weui-media-box__info">
+          <image src="{{item.avatar}}" class="comment-avatar"></image>
+          <view class="weui-media-box__info__meta">{{item.screen_name}}</view>
+          <view class="comment-right-meta comment-reply">
+            <text class="iconfont icon-comment_light" />{{item.comments_count}}
+          </view>
+          <view class="comment-right-meta comment-approve">
+            <text class="iconfont icon-appreciate_light" />{{item.likes_count}}
+          </view>
+          <view class="comment-right-meta comment-approve">
+            <text class="iconfont icon-attention_light" />{{item.plays_count}}
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

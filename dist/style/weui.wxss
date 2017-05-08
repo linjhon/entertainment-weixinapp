@@ -757,7 +757,10 @@ icon {
   position: relative;
   overflow: hidden;
 }
-.weui-panel:first-child {
+page .weui-panel:first-child {
+  margin-top: 0;
+}
+page .weui-panel:nth-child(1) {
   margin-top: 0;
 }
 .weui-panel:before {

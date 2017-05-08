@@ -1,2 +1,67 @@
+
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+
+<!--<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+</view>-->
+<view class="weui-cells weui-cells_after-title mine">
+  <view class="weui-cell">
+    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+      <image src="{{userInfo.avatarUrl}}" style="width: 50px; height: 50px;background:#ccc; display: block" />
+      <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;" wx:if="{{false}}" >8</view>
+    </view>
+    <view class="weui-cell__bd">
+      <view>{{userInfo.nickName}}</view>
+      <view style="font-size: 13px;color: #888888;"></view>
+    </view>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title mine">
+  <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <view style="display: inline-block; vertical-align: middle">我的视频</view>
+      <view class="weui-badge" style="margin-left: 5px;" hidden="{{videoCount<=0}}" >{{videoCount}}</view>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">详细信息</view>
+  </view>
+  <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <view style="display: inline-block; vertical-align: middle">我的电影</view>
+      <view class="weui-badge" style="margin-left: 5px;" hidden="{{movieCount<=0}}" >{{movieCount}}</view>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+  <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <view style="display: inline-block; vertical-align: middle">我的音乐</view>
+      <view class="weui-badge" style="margin-left: 5px;" hidden="{{musicCount<=0}}" >{{musicCount}}</view>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title mine">
+  <view class="weui-cell weui-cell_access" bindtap="onSetting" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <view style="display: inline-block; vertical-align: middle">权限管理</view>
+      <view class="weui-badge" hidden="{{hiddenLogs}}" style="margin-left: 5px;">New</view>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access" ></view>
+  </view>
+  <view class="weui-cell weui-cell_access" bindtap="clearStorge" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <view style="display: inline-block; vertical-align: middle">清除缓存</view>
+      <view class="weui-badge" hidden="{{}}" style="margin-left: 5px;">New</view>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+  <navigator url="../logs/logs" class="weui-cell weui-cell_access"  hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <view style="display: inline-block; vertical-align: middle">启动日志</view>
+      <view class="weui-badge" style="margin-left: 5px;">New</view>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>

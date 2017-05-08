@@ -1,23 +1,30 @@
-// pages/movie/movie.js
+// pages/ticket/ticket.js
 Page({
   data:{
-    scrollHeight:'',
-    movieList:[]
+    cinema:'',
+    date:''
   },
   onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
     var that=this;
+      var movieid=options.movieid;
+      var cinemaid=options.cinemaid;
+    // 页面初始化 options为页面跳转所带来的参数
     wx.request({
-      url: 'http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=1000',
-      data: {},
+      url: 'https://m.maoyan.com/showtime/wrap.json',
+      data: {
+        cinemaid:cinemaid,
+        movieid:movieid
+      },
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function(res){
         // success
-        console.log(res.data.data.movies)
-        var movies=res.data.data.movies;
+        console.log(res.data.data);
+        var data=res.data.data;
+        var date=data.Dates[0];
         that.setData({
-          movieList:movies
+          cinema:data,
+          currentDate:date //默认显示时间;
         })
       },
       fail: function(res) {
@@ -27,19 +34,6 @@ Page({
         // complete
       }
     })
-
-    //滚动区域高度自适应
-    wx.getSystemInfo({
-      success: function (res) {
-        // success
-        console.log(res.windowHeight);
-        that.setData({
-          scrollHeight: res.windowHeight - 44
-        })
-      }
-    })
-    console.log(this.data.scrollHeight)
-
   },
   onReady:function(){
     // 页面渲染完成

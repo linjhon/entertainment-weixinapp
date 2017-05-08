@@ -1,0 +1,86 @@
+
+<!--pages/moviedetail/moviedetail.wxml-->
+<view class="weui-media-box weui-media-box_appmsg" id="movie-header" hover-class="weui-cell_active">
+  <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+    <image class="weui-media-box__thumb" src="{{movie.img}}" style="background:#ccc;" />
+  </view>
+  <view class="weui-media-box__bd weui-media-box__bd_in-appmsg" style="position:relative;z-index:1;">
+    <view class="weui-media-box__title">{{movie.nm}}</view>
+    <view class="weui-media-box__desc">{{movie.cat}}</view>
+    <view class="weui-media-box__desc">{{movie.star}}</view>
+    <view class="weui-media-box__desc">{{movie.rt}}</view>
+    <view class="movie-rank">{{movie.sc}}
+      <text>分</text>
+    </view>
+  </view>
+  <view class="backgroundpic" style="background:url({{movie.img}})"></view>
+  <view class="backgroundfilter"></view>
+</view>
+<view class="container">
+  <view class="ticket-box">
+    <navigator class="ticketBtn" url="../cinemas/cinemas?id={{movie.id}}">立即购票</navigator>
+    <text class="movie-desprition" style="{{despritionHeight}}">{{movie.dra}}</text>
+    <view class="iconfont icon-unfold"></view>
+  </view>
+  
+</view>
+
+<view class="weui-panel weui-panel-first weui-panel_access" style="width:100%;">
+    <view class="weui-panel__hd">媒体库</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg">
+        <scroll-view class="weui-media-box__bd weui-media-box__bd_in-appmsg" scroll-x="true" style="width:300px;">
+          <view style="width:1600px;overflow:hidden;">
+            <view class="video-btn" bindtap="onVideo">
+              <view class="iconfont icon-videofill"></view>              
+            </view>
+            <image wx:for="{{movie.photos}}" style="float:left;width:70px;height:70px;margin-right:10px;" wx:key="{{index}}" src="{{item}}"></image>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="weui-panel__ft">
+      <view class="weui-cell weui-cell_access weui-cell_link">
+        <view class="weui-cell__bd">剧照</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-panel">
+    <view class="weui-panel__hd">短评</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text" wx:for="{{comment}}">
+        <view class="weui-media-box__title weui-media-box__title_in-text">
+          <view class="star-empty">
+            <text class="star-score" style="width:{{item.score*20+'%'}}"></text>
+          </view>
+        </view>
+        <view class="comment-content">{{item.content}}</view>
+        <view class="weui-media-box__info">
+          <image src="{{item.avatarurl}}" class="comment-avatar"></image>
+          <view class="weui-media-box__info__meta">{{item.nickName}}</view>
+          <view class="comment-right-meta comment-reply">
+            <text class="iconfont icon-comment_light" />{{item.reply}}
+          </view>
+          <view class="comment-right-meta comment-approve">
+            <text class="iconfont icon-appreciate_light" />{{item.approve}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-panel__ft">
+      <view class="weui-cell weui-cell_access weui-cell_link comment-more">
+        <view class="weui-cell__bd">查看全部{{commentTotal}}条短评</view>
+      </view>
+    </view>
+  </view>
+<video src="{{movie.vd}}" animation="{{gifPosition}}"></video>
+<view class="weui-footer" style="padding:10px 0">
+  <view class="weui-footer__links">
+    <navigator url="../index/index" open-type="switchTab" class="weui-footer__link">首页</navigator>
+    <navigator url="../music/music" open-type="switchTab" class="weui-footer__link">音乐</navigator>
+    <navigator url="../video/video" open-type="switchTab" class="weui-footer__link">视频</navigator>
+    <navigator url="../mine/mine" open-type="switchTab" class="weui-footer__link">我</navigator>
+  </view>
+  <view class="weui-footer__text">Copyright © 2016-2017 娱乐之家</view>
+</view>

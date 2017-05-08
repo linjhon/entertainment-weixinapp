@@ -1,0 +1,24 @@
+/* pages/cinemas/cinemas.wxss */
+
+.weui-media-box__title_in-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.weui-media-box__desc{
+    color:#8a869e;
+    padding-right:18vw; 
+    -webkit-line-clamp:1;
+}
+
+.cinemas-price {
+  margin-left: 3px;
+  color: #ff4d64;
+  font-weight: 400;
+  font-size: 12px;
+}
+.cinemas-price-gray{
+    color:#8a869e;
+}

@@ -1,1 +1,34 @@
 /* pages/mine/mine.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+page{
+    background:#f4f4f4;
+}
+
+
+.mine{
+    margin-top:15px;
+}
+
+.weui-cell{
+    padding:15px 15px;
+}

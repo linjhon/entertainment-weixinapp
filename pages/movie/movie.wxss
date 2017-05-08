@@ -1,1 +1,31 @@
 /* pages/movie/movie.wxss */
+
+.weui-media-box__hd_in-appmsg {
+  width: 64px;
+  height: 89px;
+}
+
+.weui-media-box__desc {
+  margin: 7px 0;
+  width: 70%;
+  white-space: nowrap;
+  color:#666;
+}
+
+.weui-media-box__bd_in-appmsg {
+  position: relative;
+}
+
+.movie-rank {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #FFB400;
+}
+.movie-rank text{
+    font-size:13px;
+}
+
+.weui-panel{
+  margin-top:0;
+}

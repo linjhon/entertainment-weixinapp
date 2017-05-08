@@ -7,7 +7,7 @@
   width: 0;
   overflow: hidden;
   z-index: 10;
-  box-shadow: 0 0 20px #666;
+  box-shadow: 0 0 10px #ccc;
 }
 
 .media-rank {
@@ -45,5 +45,20 @@
   width: 100%;
 }
 
-.wx-audio-right {
+.player{
+  width:100%;
+  height:20%;
+  position: absolute;
+  bottom:0;
+  left:0;
+}
+
+.weui-panel{
+  margin-top:0;
+}
+
+.weui-panel__hd{
+  padding:2vh 3vh;
+  height: 4vh;
+  line-height: 4vh;
 }

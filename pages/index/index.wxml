@@ -1,10 +1,42 @@
+
 <!--index.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<view class="weui-panel weui-panel-first weui-panel_access">
+  <view class="weui-panel__hd">新歌榜
+    <navigator url="../music/music" open-type="switchTab" class="weui-cell__ft weui-cell__ft_in-access ">更多</navigator>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="weui-panel__bd">
+    <view  class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator url="../music/music" open-type="switchTab" wx:for="{{song_list}}" wx:key="{{index}}" class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="height:{{windowWidth*0.3}}px">
+        <image class="weui-media-box__thumb" bindtap="onPlay" src="{{item.pic_big}}" />
+      </navigator>
+    </view>
   </view>
+</view>
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd">热映电影
+    <navigator url="../movie/movie" class="weui-cell__ft weui-cell__ft_in-access ">更多</navigator>
+  </view>
+  <view class="weui-panel__bd">
+    <view  class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator url="../moviedetail/moviedetail?id={{item.id}}" wx:for="{{movieList}}" wx:key="{{index}}" class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="height:{{windowWidth*0.4}}px">
+        <image class="weui-media-box__thumb" bindtap="onPlay" src="{{item.img}}" />
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd">热门视频
+    <navigator url="../video/video" class="weui-cell__ft weui-cell__ft_in-access ">更多</navigator>
+  </view>
+  <view class="weui-panel__bd">
+    <view  class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator url="../video/video" url="" wx:for="{{videoList}}" wx:key="{{index}}" class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="height:{{windowWidth*0.3}}px">
+        <image class="weui-media-box__thumb" bindtap="onPlay" src="{{item.cover_pic}}" />
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class="weui-footer" style="padding:10px 0">
+  
+  <view class="weui-footer__text">Copyright © 2016-2017 娱乐之家</view>
 </view>

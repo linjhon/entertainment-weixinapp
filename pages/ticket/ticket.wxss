@@ -1,0 +1,16 @@
+/* pages/ticket/ticket.wxss */
+
+.date text{
+    margin-right:10px;
+    display: inline-block;  
+}
+
+.date-box{
+    width:auto;
+}
+
+.date text.active{
+    color:#3385ff;
+    border-bottom:2px solid #3385ff;
+    padding-bottom:4px;
+}

@@ -1,16 +1,11 @@
 
 <!--pages/music/music.wxml-->
+
 <!--<button bindtap="test" >结束</button>-->
-<view class="player">
-  <image id="musicplay" animation="{{playerAnimation}}" src="{{playerSrc}}" bindtap="musicPlaySwith">播放</image>
-  <text class="musiclrc">{{playerLrc}}</text>
-</view>
-<audio src="{{music.bitrate.show_link}}" id="musicbox" author="{{music.songinfo.author}}" poster="{{music.songinfo.pic_radio}}" controls name="{{music.songinfo.title}}" bindplay="onAudioPlay" bindpause="onAudioPause" bindtimeupdate="onAudioChange" bindended="onAudioEnd" animation="{{musicAnimation}}">
-</audio>
-<view class="weui-panel weui-panel_access" style="margin-top:0;">
+<view class="weui-panel weui-panel_access">
   <view class="weui-panel__hd">新歌榜</view>
-  <scroll-view enable-back-to-top="{{true}}" bindscrolltolower="onMore" bindscroll="onScroll" scroll-y style="height:{{scrollHeight}}px" class="weui-panel__bd">
-    <view wx:for="{{song_list}}" wx:key="{{item.song_id}}" data-song_id="{{item.song_id}}" data-id="{{index}}" bindtap="onPlay" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+  <scroll-view enable-back-to-top="{{true}}" bindscrolltolower="onMore" bindscroll="onScroll" scroll-y="{{true}}" style="height:92vh" class="weui-panel__bd">
+    <navigator wx:for="{{song_list}}" wx:key="{{item.song_id}}" data-song_id="{{item.song_id}}" data-id="{{index}}" bindtap="onPlay" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
       <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
         <image class="weui-media-box__thumb" src="{{item.pic_big}}" style="background:#ccc;" />
         <text class="media-rank">{{item.rank}}</text>
@@ -19,9 +14,9 @@
         <view class="weui-media-box__title">{{item.title}}</view>
         <view class="weui-media-box__desc">{{item.author}}</view>
       </view>
-    </view>
+    </navigator>
+
     <!--加载更多-->
-  <view class="page__bd">
     <view class="weui-loadmore">
       <view class="weui-loading"></view>
       <view class="weui-loadmore__tips">加载中</view>
@@ -29,11 +24,17 @@
     <view class="weui-loadmore weui-loadmore_line">
       <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
     </view>
-    
-  </view>
-  <!--加载更多-->
-  </scroll-view>  
+
+    <!--加载更多-->
+  </scroll-view>
 </view>
+<view class="player">
+  <image id="musicplay" animation="{{playerAnimation}}" src="{{playerSrc}}" bindtap="musicPlaySwith">播放</image>
+  <text class="musiclrc">{{playerLrc}}</text>
+</view>
+<audio src="{{music.bitrate.show_link}}" id="musicbox" author="{{music.songinfo.author}}" poster="{{music.songinfo.pic_radio}}" controls name="{{music.songinfo.title}}" bindplay="onAudioPlay" bindpause="onAudioPause" bindtimeupdate="onAudioChange" bindended="onAudioEnd"
+animation="{{musicAnimation}}">
+</audio>
 
 <!--搜索框 begin-->
 

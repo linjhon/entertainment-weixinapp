@@ -1,0 +1,191 @@
+/* pages/moviedetail/moviedetail.wxss */
+
+page {  
+  background: #f4f4f4;
+}
+
+.weui-media-box_appmsg {
+  align-items: top;
+}
+
+#movie-header .backgroundpic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+  background-size: cover;
+  background-image: gray;
+  background-repeat: no-repeat;
+  background-position-y: 40%;
+}
+
+#movie-header .backgroundfilter {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  background-color: #40454d;
+  opacity: 0.55;
+}
+
+#movie-header .weui-media-box__hd_in-appmsg {
+  width: 107px;
+  height: 155px;
+  position: relative;
+  z-index: 1;
+}
+
+#movie-header .weui-media-box .weui-media-box__hd {
+  position: relative;
+  z-index: 1;
+}
+
+#movie-header .weui-media-box__bd {
+  color: #ccc;
+  position: relative;
+  z-index: 1;
+}
+
+#movie-header .weui-media-box__title {
+  color: #eee;
+}
+
+#movie-header .weui-media-box__desc {
+  margin-top: 7px;
+  color: #ccc;
+}
+
+.container {
+  background: #f4f4f4;
+  position: relative;
+  z-index: 111;
+  box-sizing: border-box;
+  display:block;
+}
+
+.ticket-box {
+  padding: 0 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+}
+.ticketBtn {
+  width: 100%;
+  background-color: #4795e5;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.video-btn {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 0;
+  top: 0;
+}
+
+.video-btn .iconfont {
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-videofill::before {
+  color: #9b8d83;
+  background-color: #c4bcb6;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.movie-desprition {
+  margin-top: 10px;
+  font-size: 14px;
+  text-indent: 2em;
+  overflow: hidden;
+  width:100%;
+}
+
+.weui-panel-first{
+  margin-top:0;
+}
+
+video {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 432px;
+  left: 40px;
+  z-index: 100;
+}
+
+/*评论列表*/
+
+.star-empty {
+  background: url(../../public/images/icons/favor_empty_light.png) repeat-x;
+  width: 60px;
+  height: 12px;
+  background-size: 12px 12px;
+  position: relative;
+}
+
+.star-score {
+  background: url(../../public/images/icons/favor_fill_light.png) repeat-x;
+  height: 12px;
+  background-size: 12px 12px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.comment-content {
+  color: #333;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.weui-media-box__info {
+  color: #999;
+}
+
+.comment-avatar {
+  margin-right: 10px;
+  float: left;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+}
+
+.weui-media-box__info__meta {
+  line-height: 29px;
+}
+
+.comment-right-meta {
+  float: right;
+  margin-left: 10px;
+  line-height: 29px;
+}
+
+.comment-right-meta text {
+  margin-right: 5px;
+}
+
+.comment-more {
+  text-align: center;
+  color: #f63;
+}

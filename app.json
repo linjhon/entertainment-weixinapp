@@ -1,10 +1,15 @@
 {
   "pages":[
-    "pages/movie/movie",
-    "pages/music/music",
     "pages/index/index",
+    "pages/movie/movie",
+    "pages/moviedetail/moviedetail",
+    "pages/cinemas/cinemas",
+    "pages/ticket/ticket",
+    "pages/music/music",
     "pages/video/video",
+    "pages/logs/logs",
     "pages/mine/mine"
+
   ],
   "window":{
     "backgroundTextStyle":"dark",
@@ -14,7 +19,7 @@
     "enablePullDownRefresh": true
   },
   "tabBar": {
-    "selectedColor": "#0dadee",
+    "selectedColor": "#3385ff;",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",
