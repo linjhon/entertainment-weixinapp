@@ -2,6 +2,9 @@
 @import "public/font/iconfont.wxss";
 
 /**app.wxss**/
+page{
+    background-color: #f4f4f4;
+}
 
 .container {
   height: 100%;
