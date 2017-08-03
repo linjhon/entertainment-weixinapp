@@ -15,7 +15,8 @@
     "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#black",
     "navigationBarTitleText": "娱乐之家",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "selectedColor": "#3385ff;",

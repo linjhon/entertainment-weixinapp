@@ -136,16 +136,15 @@ video {
 /*评论列表*/
 
 .star-empty {
-  
+  background: url(../../public/images/icons/favor_empty_light.png) repeat-x;
   width: 60px;
   height: 12px;
   background-size: 12px 12px;
   position: relative;
-  display: inline-block;
 }
 
 .star-score {
-  
+  background: url(../../public/images/icons/favor_fill_light.png) repeat-x;
   height: 12px;
   background-size: 12px 12px;
   display: inline-block;

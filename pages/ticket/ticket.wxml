@@ -1,86 +1,35 @@
+
 <!--pages/ticket/ticket.wxml-->
-<view class="box">
-  <view class="weui-panel weui-panel-first weui-panel_access">
-    <view class="weui-panel__bd">
-      <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-
-        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-          <view class="weui-media-box__title">{{cinema.cinemaDetailModel.nm}}</view>
-          <view class="weui-media-box__desc">{{cinema.cinemaDetailModel.addr}}</view>
-        </view>
-        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg phone">
-          <text wx:if="{{cinema.cinemaDetailModel.tel.length>0}}" class="weui-media-box__thumb iconfont icon-phone" bindtap="telPhone" data-phone="{{cinema.cinemaDetailModel.tel[0]}}" />
-        </view>
-      </view>
+<view class="weui-panel weui-panel-first weui-panel_access">
+  <scroll-view class="weui-panel__hd date">
+    <view class="date-box">
+        <text wx:for="{{cinema.Dates}}" class="{{currentDate.text==item.text?'active':''}}" wx:key="{{index}}">{{item.text}}</text>
     </view>
-    <scroll-view scroll-x scroll-with-animation scroll-left="{{picScrollLeft}}" class="movie-pic">
-      <view class="movie-pic-box" style="width:{{198*cinema.movies.length}}rpx;">
-        <view wx:for="{{cinema.movies}}" class="movie-pic-item" wx:key="index">
-          <image class=" {{item.id==cinema.currentMovie.id?'active':''}}" src="{{item.img}}" data-movieid="{{item.id}}" data-index="{{index}}" bindtap="selectMovie"></image>
-        </view>
+  </scroll-view>
+  <view class="weui-panel__bd">
+    <navigator wx:for="{{cinemasList}}" url="../ticket/ticket?cinemaid={{item.id}}&movieid={{movieId}}" wx:key="{{index}}" class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">{{item.nm}}
+        <text class="cinemas-price">{{item.sellPrice}}
+          <text class="cinemas-price-gray">元起</text>
+        </text>
       </view>
-    </scroll-view>
-    <view class="weui-media-box weui-media-box_text">
-      {{cinema.currentMovie.nm}}
-      <text class="movie-score">{{cinema.currentMovie.sc}}</text>
+      <view class="weui-media-box__desc">{{item.addr}}</view>
+    </navigator>
+  </view>
+  <view class="weui-panel__ft">
+    <view class="weui-cell weui-cell_access weui-cell_link">
+      <view class="weui-cell__bd">查看更多</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </view>
   </view>
-
-
-
-  <view class="weui-panel weui-panel-first weui-panel_access">
-
-    <view class="weui-panel__hd date">
-      <scroll-view scroll-x>
-        <view class="date-box">
-          <text wx:for="{{cinema.Dates}}" class="{{currentDate.text==item.text?'active':''}}" bindtap="dateTab" data-date="{{item}}" wx:key="{{index}}">{{item.text}}</text>
-        </view>
-      </scroll-view>
-    </view>
-    <view class="weui-panel__bd">
-      <view class="ticket-end" wx:if="{{cinema.DateShow[currentDate.slug].length<=0}}">今日场次已放映完</view>
-
-      <view wx:for="{{cinema.DateShow[currentDate.slug]}}" url="../ticket/ticket?cinemaid={{item.id}}&movieid={{movieId}}" wx:key="{{index}}" class="weui-media-box weui-media-box_text  ticket-box">
-        <view class="weui-media-box__desc ticket-item">
-          <view class="ticket-time-begin">{{item.tm}}</view>
-          <view class="ticket-time-end">{{item.end}}结束</view>
-        </view>
-        <view class="weui-media-box__desc ticket-info">
-          <view class="ticket-lang">{{item.lang}} {{item.tp}}</view>
-          <view class="ticket-hill">{{item.th}}</view>
-        </view>
-        <view class="weui-media-box__desc ticket-price">
-          <view class="ticket-price-sale">
-            <!-- 促销价 -->
-            <view class="{{item.price[0].child[0].attr.class[0]}} {{item.price[0].child[0].attr.class[1]}}">
-              <block wx:for="{{item.price[0].child}}" wx:for-index="inx" wx:for-item="value" wx:key="{{inx}}">
-                <i wx:if="{{value.type=='text'}}">{{value.text}}</i>
-              </block>
-            </view>元
-          </view>
-          <!--原价-->
-          <view class="ticket-hill">影院价:
-            <view class="{{item.oldprice[0].child[0].attr.class[0]}} {{item.oldprice[0].child[0].attr.class[1]}}">
-              <block wx:for="{{item.oldprice[0].child}}" wx:for-index="inx" wx:for-item="value" wx:key="{{inx}}">
-                <i wx:if="{{value.type=='text'}}">{{value.text}}</i>
-              </block>
-            </view>元
-          </view>
-        </view>
-        <view class="weui-media-box__desc ticket-item ticket-btn">
-          <button>选座购票</button>
-        </view>
-      </view>
-    </view>
+</view>
+<view class="weui-footer" style="padding:10px 0">
+  <view class="weui-footer__links">
+    <navigator url="../index/index" open-type="switchTab" class="weui-footer__link">首页</navigator>
+    <navigator url="../music/music" open-type="switchTab" class="weui-footer__link">音乐</navigator>
+    <navigator url="../video/video" open-type="switchTab" class="weui-footer__link">视频</navigator>
+    <navigator url="../movie/movie" open-type="switchTab" class="weui-footer__link">电影</navigator>
+    <navigator url="../mine/mine" open-type="switchTab" class="weui-footer__link">我</navigator>
   </view>
-  <view class="weui-footer" style="padding:10px 0">
-    <view class="weui-footer__links">
-      <navigator url="../index/index" open-type="switchTab" class="weui-footer__link">首页</navigator>
-      <navigator url="../music/music" open-type="switchTab" class="weui-footer__link">音乐</navigator>
-      <navigator url="../video/video" open-type="switchTab" class="weui-footer__link">视频</navigator>
-      <navigator url="../movie/movie" open-type="switchTab" class="weui-footer__link">电影</navigator>
-      <navigator url="../mine/mine" open-type="switchTab" class="weui-footer__link">我</navigator>
-    </view>
-    <view class="weui-footer__text">Copyright © 2016-2017 娱乐之家</view>
-  </view>
+  <view class="weui-footer__text">Copyright © 2016-2017 娱乐之家</view>
 </view>
